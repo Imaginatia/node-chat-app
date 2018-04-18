@@ -2,7 +2,7 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
-const {generateMessage} = require('./utils/message');
+const {generateMessage, generateLocationMessage} = require('./utils/message');
 
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
@@ -18,16 +18,23 @@ io.on('connection', (socket) => {
   socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat room'));
   socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
 
-  socket.on('createMessage', (message, callback) =>{
+  socket.on('createMessage', (message, callback) => {
     console.log(message);
     io.emit('newMessage', message);
     callback('From server');
+  });
+
+  socket.on('createLocationMessage', (coords) => {
+    console.log(coords);
+    io.emit('newLocationMessage', generateLocationMessage('Admin', coords.latitude, coords.longitude));
   });
 
   socket.on('disconnect', () => {
     console.log('User disconnected');
   });
 });
+
+
 
 server.listen(port, () => {
   console.log(`Server is up on port ${port}`);
