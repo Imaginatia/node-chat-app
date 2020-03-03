@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Join | ChatApp</title>
-    <meta neam="viewport" content="width=device-widith, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/css/styles.css">
-  </head>
-  <body class="centered-form">
-    <div class="centered-form__form">
-      <form action="/chat.html">
-        <div class="form-field">
-          <h3>Join a Chat</h3>
-        </div>
-        <div class="form-field">
-          <label>Display Name</label>
-          <input type="text" name="name">
-        </div>
-        <div class="form-field">
-          <label>Room Name</label>
-          <input type="text" name="room">
-        </div>
-        <div class="form-field">
-          <button>Join</button>
-        </div>
-        <div class="form-field"></div>
-      </form>
-    </div>
 
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Join | ChatApp</title>
+  <meta neam="viewport" content="width=device-widith, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script>
+    !function () {
+      var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+      analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"]; analytics.factory = function (t) { return function () { var e = Array.prototype.slice.call(arguments); e.unshift(t); analytics.push(e); return analytics } }; for (var t = 0; t < analytics.methods.length; t++) { var e = analytics.methods[t]; analytics[e] = analytics.factory(e) } analytics.load = function (t, e) { var n = document.createElement("script"); n.type = "text/javascript"; n.async = !0; n.src = "https://cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(n, a); analytics._loadOptions = e }; analytics.SNIPPET_VERSION = "4.1.0";
+        analytics.load("2whSg1o4cK8jrwXPYGFaBhTEMjFAgDGz");
+        analytics.page();
+      }
+    }();
+  </script>
+</head>
+
+<body class="centered-form">
+  <div class="centered-form__form">
+    <form action="/chat.html">
+      <div class="form-field">
+        <h3>Join a Chat</h3>
+      </div>
+      <div class="form-field">
+        <label>Display Name</label>
+        <input type="text" name="name">
+      </div>
+      <div class="form-field">
+        <label>Room Name</label>
+        <input type="text" name="room">
+      </div>
+      <div class="form-field">
+        <button>Join</button>
+      </div>
+      <div class="form-field"></div>
+    </form>
+  </div>
+
+</body>
+
 </html>
